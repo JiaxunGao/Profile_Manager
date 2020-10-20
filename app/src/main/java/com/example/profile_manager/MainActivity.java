@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         }
         int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
         teamicon.setImageResource(resID);
+
+
     }
 
 
