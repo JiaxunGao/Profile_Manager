@@ -116,7 +116,11 @@ public class ProfileActivity extends AppCompatActivity {
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
-            icon0.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            Intent s = new Intent();
+            s.putExtra("new",picturePath);
+            setResult(RESULT_OK, s);
+            finish();
+
 
 
         }}

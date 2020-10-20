@@ -3,6 +3,7 @@ package com.example.profile_manager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -60,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if (resultCode == RESULT_CANCELED) return;
 
-
+        if(data.getExtras() != null){
+            teamicon.setImageBitmap(BitmapFactory.decodeFile(data.getExtras()));
+        }
         String drawableName = "ic_logo_00";
         switch (data.getIntExtra("imageID",R.id.imageView)) {
             case R.id.imageView:
